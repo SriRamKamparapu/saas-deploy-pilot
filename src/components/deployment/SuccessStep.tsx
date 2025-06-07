@@ -8,7 +8,7 @@ import {
   Copy, 
   Globe,
   Database,
-  Storage,
+  HardDrive,
   Activity,
   Rocket
 } from 'lucide-react';
@@ -148,7 +148,7 @@ const SuccessStep = ({ onClose }: SuccessStepProps) => {
               </div>
 
               <div className="flex items-center gap-3 p-3 bg-purple-50 border border-purple-200 rounded-lg">
-                <Storage className="w-4 h-4 text-purple-600" />
+                <HardDrive className="w-4 h-4 text-purple-600" />
                 <div className="flex-1">
                   <div className="font-medium text-purple-900">S3 Bucket</div>
                   <div className="text-sm text-purple-700">{deploymentDetails.s3Bucket}</div>

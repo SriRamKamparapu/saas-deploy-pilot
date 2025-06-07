@@ -13,7 +13,7 @@ import {
   ChevronLeft, 
   Server,
   Database,
-  Storage,
+  HardDrive,
   Shield,
   CheckCircle,
   Settings,
@@ -209,7 +209,7 @@ const DeploymentStep = ({ onNext, onPrevious }: DeploymentStepProps) => {
 
                 {config.enableS3 && (
                   <div className="flex items-center gap-3 p-3 bg-purple-50 border border-purple-200 rounded-lg">
-                    <Storage className="w-5 h-5 text-purple-600" />
+                    <HardDrive className="w-5 h-5 text-purple-600" />
                     <div>
                       <div className="font-medium text-purple-900">S3 + CloudFront</div>
                       <div className="text-sm text-purple-700">File storage and CDN</div>

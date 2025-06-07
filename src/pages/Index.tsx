@@ -1,4 +1,3 @@
-
 import { useState } from 'react';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
@@ -24,13 +23,14 @@ import Header from '@/components/layout/Header';
 import DeploymentWizard from '@/components/deployment/DeploymentWizard';
 import DeploymentCard from '@/components/dashboard/DeploymentCard';
 import StatsCards from '@/components/dashboard/StatsCards';
+import { Deployment } from '@/types/deployment';
 
 const Index = () => {
   const [showWizard, setShowWizard] = useState(false);
   const [activeTab, setActiveTab] = useState('deployments');
 
-  // Mock data for deployments
-  const deployments = [
+  // Mock data for deployments with proper typing
+  const deployments: Deployment[] = [
     {
       id: 1,
       name: 'my-react-app',
