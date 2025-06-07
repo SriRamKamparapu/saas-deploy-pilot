@@ -13,7 +13,8 @@ import {
   AlertTriangle, 
   ExternalLink,
   Key,
-  MapPin
+  MapPin,
+  ChevronRight
 } from 'lucide-react';
 
 interface AWSCredentialsStepProps {
