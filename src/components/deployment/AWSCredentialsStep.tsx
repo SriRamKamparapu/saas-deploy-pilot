@@ -4,13 +4,11 @@ import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/com
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { Label } from '@/components/ui/label';
-import { Badge } from '@/components/ui/badge';
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '@/components/ui/select';
 import { Alert, AlertDescription } from '@/components/ui/alert';
 import { 
   Cloud, 
   CheckCircle, 
-  AlertTriangle, 
   ExternalLink,
   Key,
   MapPin,
@@ -78,8 +76,7 @@ const AWSCredentialsStep = ({ onNext }: AWSCredentialsStepProps) => {
         </AlertDescription>
       </Alert>
 
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-        {/* Credentials Form */}
+      <div className="max-w-2xl mx-auto">
         <Card className="border-slate-200">
           <CardHeader>
             <CardTitle className="text-lg">AWS Credentials</CardTitle>
@@ -145,38 +142,6 @@ const AWSCredentialsStep = ({ onNext }: AWSCredentialsStepProps) => {
                 <span className="text-green-700 font-medium">Credentials validated successfully!</span>
               </div>
             )}
-          </CardContent>
-        </Card>
-
-        {/* Required Permissions */}
-        <Card className="border-slate-200">
-          <CardHeader>
-            <CardTitle className="text-lg">Required Permissions</CardTitle>
-            <CardDescription>
-              Your AWS user needs these permissions for deployment
-            </CardDescription>
-          </CardHeader>
-          <CardContent>
-            <div className="space-y-3">
-              {[
-                { service: 'ECS', permission: 'Full access for container deployment', required: true },
-                { service: 'RDS', permission: 'Create and manage databases', required: true },
-                { service: 'S3', permission: 'Create buckets and manage objects', required: true },
-                { service: 'EC2', permission: 'Manage VPC and security groups', required: true },
-                { service: 'IAM', permission: 'Create service roles', required: true },
-                { service: 'CloudWatch', permission: 'Create logs and metrics', required: false }
-              ].map((item, index) => (
-                <div key={index} className="flex items-center justify-between p-3 border border-slate-200 rounded-lg">
-                  <div>
-                    <div className="font-medium text-slate-900">{item.service}</div>
-                    <div className="text-sm text-slate-600">{item.permission}</div>
-                  </div>
-                  <Badge variant={item.required ? "destructive" : "outline"}>
-                    {item.required ? 'Required' : 'Optional'}
-                  </Badge>
-                </div>
-              ))}
-            </div>
           </CardContent>
         </Card>
       </div>
